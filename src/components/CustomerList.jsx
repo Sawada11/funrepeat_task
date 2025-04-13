@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const CustomerList = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
-  
+
   // nameとcompanyを検索
   const filteredCustomers = customers.filter((customer) =>
     customer.name.includes(searchTerm) || customer.company.includes(searchTerm)
@@ -50,9 +50,7 @@ const CustomerList = () => {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-        <button className="btn btn-outline-primary" type="button">
-          フィルター
-        </button>
+
       </div>
 
       {/* テーブル */}
