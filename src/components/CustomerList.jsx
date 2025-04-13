@@ -1,22 +1,31 @@
 import React, { useState } from 'react';
 import { customers } from '../data/Customers';
+import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 const CustomerList = () => {
   const [searchTerm, setSearchTerm] = useState('');
-
+  const navigate = useNavigate();
+  
   // nameとcompanyを検索
   const filteredCustomers = customers.filter((customer) =>
     customer.name.includes(searchTerm) || customer.company.includes(searchTerm)
   );
 
+  //ログイン画面に遷移
+  const handleLogout = () => {
+    navigate('/'); 
+  };
   return (
     <div className="container mt-4">
       {/* タイトル */}
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h4 className="fw-bold">顧客管理</h4>
-        <button className="btn btn-outline-secondary">ログアウト</button>
+        <button className="btn btn-outline-secondary" onClick={handleLogout}>
+          ログアウト
+        </button>
       </div>
 
       {/* ナビゲーションバー */}
