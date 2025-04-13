@@ -1,70 +1,104 @@
-# Getting Started with Create React App
+# 顧客管理デモアプリ
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+このアプリは、簡易的なログイン画面と顧客一覧表示画面を持つフロントエンドアプリケーションです。ReactとBootstrapを使用して構築されています。
+![スクリーンショット 2025-04-13 180649](https://github.com/user-attachments/assets/457758a7-0326-4ff3-990b-173f94d7ab6f)
 
-## Available Scripts
+##  目次（Table of Contents）
 
-In the project directory, you can run:
+- [顧客管理デモアプリ](#顧客管理デモアプリ)
+- [セットアップ手順](#セットアップ手順)
+- [使用技術・ライブラリ](#使用技術ライブラリ)
+- [実装機能](#実装機能)
+  - [ログイン画面](#ログイン画面)
+  - [顧客一覧画面](#顧客一覧画面)
+- [動作確認方法](#動作確認方法)
+- [ディレクトリ構成（抜粋）](#ディレクトリ構成抜粋)
+- [備考](#備考)
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## セットアップ手順
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. リポジトリをクローン
 
-### `npm test`
+```bash
+git clone https://github.com/Sawada11/funrepeat_task.git
+cd funrepeat_task
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. 必要なパッケージをインストール
 
-### `npm run build`
+```bash
+npm install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. 開発サーバーを起動
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+アプリは [http://localhost:3000](http://localhost:3000) で表示されます。
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 使用技術・ライブラリ
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [React](https://reactjs.org/)（v18）
+- [React Router DOM](https://reactrouter.com/)（ルーティング制御）
+- [Bootstrap 5](https://getbootstrap.com/)（スタイリング）
+- JavaScript (ES6)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 実装機能
 
-## Learn More
+### ログイン画面
+- ユーザー名とパスワードの入力（admin / password でログイン可）
+- ログイン成功時、顧客一覧画面へ遷移
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 顧客一覧画面
+- ログイン後に閲覧可能
+- 顧客情報をテーブル形式で表示（名前・会社名・電話番号・登録日）
+- 顧客名・会社名での検索機能あり
+- ログアウトボタンでログイン画面に戻る
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## 動作確認方法
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. 開発サーバーを起動
+   ```bash
+   npm start
+   ```
 
-### Analyzing the Bundle Size
+2. ログイン画面で以下を入力：
+   - ユーザー名: `admin`
+   - パスワード: `password`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+3. 顧客管理画面に遷移し、顧客一覧や検索機能が使えることを確認
 
-### Making a Progressive Web App
+4. 「ログアウト」ボタンでログイン画面に戻ることを確認
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## ディレクトリ構成（抜粋）
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
+src/
+├── App.js
+├── components/
+│   ├── Login.jsx
+│   └── CustomerList.jsx
+├── data/
+│   └── Customers.js
+├── index.js
+```
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 備考
 
-### `npm run build` fails to minify
+このアプリはフロントエンドのみで構成されており、バックエンドやデータベースとの連携は行っていません。
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
