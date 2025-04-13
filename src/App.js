@@ -1,11 +1,16 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import CustomerList from './components/CustomerList';
+import Login from './components/Login';
 
 function App() {
   return (
-    <div className="App">
-      <CustomerList />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/customers" element={<CustomerList />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
