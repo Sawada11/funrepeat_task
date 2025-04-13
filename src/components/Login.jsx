@@ -1,4 +1,3 @@
-// src/Login.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -16,10 +15,6 @@ const Login = () => {
     } else {
       alert('ユーザー名またはパスワードが間違っています');
     }
-  };
-  // 新規作成ページへ遷移
-  const handleRegister = () => {
-    navigate('/register');
   };
 
   return (
@@ -60,21 +55,14 @@ const Login = () => {
             />
           </div>
 
-          <div className="d-flex justify-content-between mt-4">
+          <div className="d-flex justify-content-end mt-4">
             <button
-              type="button"
-              className="btn btn-outline-dark px-4 py-2 rounded"
-              onClick={handleRegister}
+                type="submit"
+                className="btn btn-primary px-4 py-2 text-white"
             >
-              新規作成
+                ログイン
             </button>
-            <button
-              type="submit"
-              className="btn btn-primary px-4 py-2 text-white"
-            >
-              ログイン
-            </button>
-          </div>
+            </div>
         </form>
       </div>
     </div>
