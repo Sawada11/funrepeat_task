@@ -85,13 +85,14 @@ npm start
 
 ```
 src/
-├── App.js
-├── components/
-│   ├── Login.jsx
-│   └── CustomerList.jsx
-├── data/
-│   └── Customers.js
-├── index.js
+├── App.js                   
+├── components/              
+│   ├── Login.jsx            # ログイン画面コンポーネント（ユーザー名とパスワード入力）
+│   └── CustomerList.jsx     # 顧客一覧画面コンポーネント（検索・表示・ログアウト）
+├── data/                    
+│   └── Customers.js         # 顧客情報の仮データ（配列形式）
+├── index.js                 
+
 ```
 
 ---
